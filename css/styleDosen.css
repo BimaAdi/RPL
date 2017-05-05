@@ -1,0 +1,209 @@
+html {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	background: #FFFFFF;
+}
+strong{
+	font-family: Tasse Wide Medium;
+}
+#header .div1 {
+	height: 58px;
+	padding: 0px 30px;
+	/*background: url('http://spot.upi.edu/assets/image/bg-header.jpg') repeat-x;*/
+	background: url('asset/bg-header.jpg') repeat-x;
+	min-width: 900px;
+}
+
+#header .div2 {
+	color: #FFFFFF;
+	padding: 18px 0px 0px 0px;
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 150%;
+	/*text-indent: -9999px;*/
+}
+box {
+	margin-bottom: 15px;
+}
+.box > .heading {
+	height: 38px;
+	padding-left: 7px;
+	padding-right: 7px;
+	border: 1px solid #DBDBDB;
+	background: url('http://spot.upi.edu/assets/image/admin/box.png') repeat-x;
+	-webkit-border-radius: 7px 7px 0px 0px;
+	-moz-border-radius: 7px 7px 0px 0px;
+	-khtml-border-radius: 7px 7px 0px 0px;
+	border-radius: 7px 7px 0px 0px;
+}
+
+.box > .footer {
+	height: 38px;
+	padding-left: 7px;
+	padding-right: 7px;
+	border: 1px solid #DBDBDB;
+	background: url('http://spot.upi.edu/assets/image/admin/box.png') repeat-x;
+	-webkit-border-radius: 0px 0px 7px 7px;
+	-moz-border-radius: 0px 0px 7px 7px;
+	-khtml-border-radius: 0px 0px 7px 7px;
+	border-radius: 0px 0px 7px 7px;
+}
+
+.box > .heading h1 {
+	margin: 0px;
+	padding: 11px 0px 0px 0px;
+	color: #003A88;
+	font-size: 16px;
+}
+.box > .heading h1 img {
+	float: left;
+	margin-top: -1px;
+	margin-left: 3px;
+	margin-right: 8px;
+}
+.box > .heading .buttons {
+	float: right;
+	padding-top: 7px;
+	margin-right: 5px;
+}
+.box > .heading .buttons .button {
+	margin-left: 5px;
+}
+.box > .footer .buttons {
+	float: right;
+	padding-top: 7px;
+	margin-right: 5px;
+}
+.box > .footer .buttons .button {
+	margin-left: 5px;
+}
+.box > .content h2 { 
+	text-transform: uppercase;
+	color: #FF802B;
+	font-size: 15px;
+	font-weight: bold;
+	padding-bottom: 3px;
+	border-bottom: 1px dotted #000000;	
+}
+.box > .content {
+	padding: 10px;
+	border-left: 1px solid #CCCCCC;
+	border-right: 1px solid #CCCCCC;
+	border-bottom: 1px solid #CCCCCC;
+	min-height: 300px;
+	overflow: auto;
+	background:#fff;
+
+}
+#menu {
+	background-color: #000;
+	background-image: url('http://spot.upi.edu/assets/menu.png');
+	background-repeat: repeat-x;
+	position: relative;
+	z-index: 1;
+	height: 34px;
+	clear: both;
+	padding: 0px 30px;
+	min-width: 900px;
+}
+#menu > ul.left {
+	float: left;
+}
+#menu > ul.right {
+	float: right;
+}
+#menu > ul {
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+#menu > ul ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	background: url('http://spot.upi.edu/assets/image/admin/transparent.png');
+}
+#menu > ul a {
+	display: block;
+	color: #FFFFFF;
+	text-decoration: none;
+	padding: 5px;
+}
+#menu > ul > li + li {
+	background: url('http://spot.upi.edu/assets/image/admin/split.png') center left no-repeat;
+}
+#menu > ul .top, #menu > ul li li.sfhover {
+	padding: 10px 15px 9px 17px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFFFFF;
+}
+#menu > ul ul li {
+	padding: 2px;
+}
+#menu > ul .selected .top {
+	background: url('http://spot.upi.edu/assets/image/admin/selected.png') repeat-x;
+	color: #FFFFFF;
+}
+#menu > ul .selected:hover a.top, #menu > ul .sfhover a.top {
+}
+#menu > ul .parent {
+	background: url('http://spot.upi.edu/assets/image/admin/arrow-right.png') 95% center no-repeat;
+}
+#menu > ul li {
+	float: left;
+	list-style: none;
+}
+#menu > ul li ul {
+	position: absolute;
+}
+#menu > ul li li {
+	clear: both;
+}
+#menu > ul li ul a {
+	color: #FFFFFF;
+	height: 15px;
+	width: 145px;
+}
+#menu > ul li ul ul {
+	margin: -27px 0 0 157px;
+}
+#menu > ul li li:hover, #menu > ul li li.sfhover {
+	background: #333;
+	color: #000000;
+}
+
+.isi{
+	margin-left:50px;
+	margin-right: 70px;
+	margin-top: 30px;
+}
+
+.highlighted-row {
+width: 100%;
+border-collapse: collapse;
+box-shadow: 0 2px 3px 1px #ddd;
+overflow: hidden;
+border:10px solid #fff;
+}
+.highlighted-row th,.highlighted-row td{
+vertical-align: top;
+padding:10px 7px;
+text-align: left;
+margin:0;
+}
+/* Make row highlighted */
+.highlighted-row tbody tr {
+background:#000000; /* red */
+color:#fff;
+}
+.highlighted-row th {
+background:#cc3333; /* red */
+color:#fff;
+}
