@@ -69,7 +69,6 @@ class RPLController extends CI_Controller {
 		$Ch['Ruangan'] = $this->RPLModel->CariKodeRuangan($kode);
 		$Ch['Sks'] = $_POST['Sks'];
 		$this->RPLModel->GantiJadwal($Ch);
-		BackToAdmin();
 		$file['Data'] = $this->RPLModel->GetAllData($Ch);
 		$file['Nama'] = $this->RPLModel->GetNamaDosen($Ch);
 		$file['Pesan'] = $this->RPLModel->GetPesan();
