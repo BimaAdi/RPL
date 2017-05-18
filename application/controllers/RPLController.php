@@ -56,6 +56,8 @@ class RPLController extends CI_Controller {
 		else
 		{
 			echo "failed";
+			$this->session->set_flashdata('failed','Username atau password salah');
+			redirect('');
 		}
 	}
 
@@ -110,6 +112,19 @@ class RPLController extends CI_Controller {
 		}
 	}
 
+	function toChange($Kode_Jadwal)
+	{
+		$file['Nama'] = '0011';
+		$file['Data'] = $this->RPLModel->GetAllData($file);
+		$file['Pesan'] = $this->RPLModel->GetPesan();
+		$file['kode_jadwal'] = $Kode_Jadwal; 
+		$file['Hari'] = $this->RPLModel->EditHari($Kode_Jadwal);
+		$file['Jam'] = $this->RPLModel->EditJam($Kode_Jadwal);
+		$file['ruangan'] = $this->RPLModel->EditRuangan($Kode_Jadwal);
+		$file['Sks'] = $this->RPLModel->EditSks($Kode_Jadwal);
+		$this->load->view('change', $file);
+	}
+
 	function SendRequest()
 	{
 		$Data['Nama'] = $_POST['Nama'];
@@ -118,6 +133,8 @@ class RPLController extends CI_Controller {
 		/*$this->load->view('Dosen', $Data);*/
 		$file['Data'] = $this->RPLModel->GetDataDosen2($Data);
 		$file['Nama'] = $this->RPLModel->GetNamaDosen2($Data);
+		$this->session->set_flashdata('request','request terkirim');
 		$this->load->view('Dosen', $file);
+		/*redirect('');*/
 	}
 }

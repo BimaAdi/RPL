@@ -63,13 +63,12 @@
 </div>
 <!-- ####################################################################################################### -->
 <div style="padding-left: 200px;">
-  <font size="6"><?php foreach ($Nama as $Name) {
-        echo $Name->Nama_Dosen;
-      }?></font>  
+    
 </div>
 <div class="wrapper col4">
   <div id="container">
     <div id="content">
+      
 <h1>Pesan</h1>
 <table border="1" style="background-color: white;" class="highlighted-row ">
 <thead>
@@ -89,59 +88,103 @@
 ?>
 </tbody>
 </table>
-      <!-- <a href="tambah_admin.html"><button>Tambah Admin</button></a><br><br> -->
-    
-<!--combobox-->   
-<!-- <select>
-  <option nama="5" value="10">5</option>
-  <option nama="4" value="10">4</option>
-  <option nama="3" value="10">3</option>
-  <option nama="2" value="10">2</option>
-  <option nama="1" value="10">1</option>
-</select><br><br>
- -->
-<!--search di atas tabel-->
-<!-- <form>
-  <input class="search" type="text" placeholder="Cari..." required> 
-  <input class="button" type="button" value="Cari">   
-</form><br>
- -->    
-
-<table border="1" style="background-color: white;" class="highlighted-row ">
-<thead>
-<tr>
-<th width="10px">Kode Jadwal</th>
-<th width="120px">Nama Dosen</th>
-<th width="120px">Mata Kuliah</th>
-<th width="10px">Hari</th>
-<th width="120px">Jam</th>
-<th width="120px">Ruang</th>
-<th width="10px">Sks</th>
-<th width="20px">Ganti</th>
-</tr>
-</thead>
-<tbody>
-<?php
-  foreach ($Data as $All) {
-          echo '<tr>';
-          echo '<td width="10px">'.$All->Kode_Jadwal.'</td>';
-          echo '<td width="120px">'.$All->Nama_Dosen.'</td>';
-          echo '<td width="120px">'.$All->Nama_Mata_Kuliah.'</td>';
-          echo '<td width="10px">'.$All->Hari.'</td>';
-          echo '<td width="80px">'.$All->jam.'</td>';
-          echo '<td width="120px">'.$All->Nama_Ruangan.'</td>';
-          echo '<td width="10px">'.$All->Sks.'</td>';
-          $kode= $All->Kode_Jadwal;
-?>       
-          <td width="40px" style="color: red;"><a href="<?php echo site_url('RPLController/toChange/'.$kode);?>"><u>Ganti</u></a></td> 
+<!-- change -->
 <?php 
-          echo '</tr>';
-          } 
- ?>
-        
+  $hari = array("senin","selasa","rabu","kamis","jumat");
+  $jam = array("07:00 - 09:30", "09:30 - 12:00", "13:00 - 15:30","15:30 - 18:00");
+  $sks = array(2, 3);
+?>
+<form action="<?php echo site_url('RPLController/Ganti');?>" method="POST">
+      <div class="form-group">
+        kode Jadwal : <select name="Kode_Jadwal">
+         <option value="<?php echo $kode_jadwal?>"><?php echo $kode_jadwal?></option>
+          <?php 
+            foreach ($Data as $All) {
+          ?>
+              <option value = "<?php echo $All->Kode_Jadwal;?>"><?php echo $All->Kode_Jadwal; ?></option>;
+          <?php 
+            }
+          ?>
+        </select><br>
 
-</tbody>
-</table>
+
+        Hari : <select name="Hari">
+        <?php 
+            foreach ($Hari as $All) {
+          ?>
+              <option value = "<?php echo $All->Hari;?>"><?php echo $All->Hari; ?></option>;
+          <?php 
+            }
+          ?>
+          <!-- -->
+          <?php 
+            for ($i=0; $i < 5; $i++) { 
+          ?>
+              <option value = "<?php echo $hari[$i];?>"><?php echo $hari[$i];?></option>;
+          <?php 
+            }
+          ?>
+        </select><br>
+
+
+        Jam : <select name="Jam">
+        <?php 
+            foreach ($Jam as $All) {
+          ?>
+              <option value = "<?php echo $All->Jam;?>"><?php echo $All->Jam; ?></option>;
+          <?php 
+            }
+          ?>
+          <!-- -->
+           <?php 
+            for ($i=0; $i < 4; $i++) { 
+          ?>
+              <option value = "<?php echo $jam[$i];?>"><?php echo $jam[$i];?></option>;
+          <?php 
+            }
+          ?>
+        </select><br>
+
+
+        Ruangan : <select name="Ruangan">
+         <?php 
+            foreach ($ruangan as $All) {
+          ?>
+              <option value = "<?php echo $All->Nama_Ruangan;?>"><?php echo $All->Nama_Ruangan; ?></option>;
+          <?php 
+            }
+          ?>
+          <!-- -->
+          <?php 
+            foreach ($Data as $All) {
+          ?>
+              <option value = "<?php echo $All->Nama_Ruangan;?>"><?php echo $All->Nama_Ruangan; ?></option>;
+          <?php 
+            }
+          ?>
+        </select><br>
+
+
+        Sks : <select name="Sks">
+        <?php 
+            foreach ($Sks as $All) {
+          ?>
+              <option value = "<?php echo $All->Sks;?>"><?php echo $All->Sks; ?></option>;
+          <?php 
+            }
+          ?>
+          <!-- -->
+           <?php 
+            for ($i=0; $i < 2; $i++) { 
+          ?>
+              <option value = "<?php echo $sks[$i];?>"><?php echo $sks[$i];?></option>;
+          <?php 
+            }
+          ?>
+        </select><br>
+        <input type="submit" value="Change">
+      </div>
+</form>
 
 <!--<p><b>1</b> of <b>1</b></p>-->
 </div>

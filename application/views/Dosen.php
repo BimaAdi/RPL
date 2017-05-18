@@ -23,7 +23,7 @@
   <div id="topbar">
     <div id="topnav">
       <ul>
-        <li class="active"><a href="#">Home</a></li>
+        <li class="active"><a href="">Home</a></li>
         <!-- <li><a href="#">Master Data</a>
           <ul>
             <li><a href="ruangan.html">Ruangan</a></li>
@@ -87,7 +87,7 @@
   <input class="button" type="button" value="Cari">		
 </form><br>
  -->	  
-
+<p><?php echo $this->session->flashdata('request'); ?></p>
 <table border="1" style="background-color: white;" class="highlighted-row ">
 <thead>
 <tr>
@@ -96,7 +96,7 @@
 <th width="120px">Jam</th>
 <th width="120px">Ruang</th>
 <th width="10px">Sks</th>
-<th width="20px">Ganti</th>
+<!-- <th width="20px">Ganti</th> -->
 </tr>
 </thead>
 <tbody>
@@ -113,7 +113,7 @@
           echo '<td width="10px">'.$All->Sks.'</td>';
           $kode= $All->Kode_Jadwal;
 ?>
-          <td width="40px" style="color: red;"><a href="<?php echo site_url('RPLController/Edit/'.$kode);?>"><u>Ganti</u></a></td>
+          <!-- <td width="40px" style="color: red;"><a href="<?php echo site_url('RPLController/Edit/'.$kode);?>"><u>Ganti</u></a></td> -->
 <?php   
           echo '</tr>';
         } 

@@ -176,4 +176,32 @@ class RPLModel extends CI_Model {
 		$query = "UPDATE jadwal Set Hari ='$Hari', Jam = '$Jam', Kode_Ruangan = '$Ruangan', Sks = '$Sks' WHERE Kode_Jadwal = '$Kode_Jadwal';";
 		$hasil = $this->db->query($query);
 	}
+
+	function EditHari($kode)
+	{
+		$query = "Select Hari From jadwal Where Kode_Jadwal ='$kode';";
+		$hasil = $this->db->query($query);
+		return $hasil->result();
+	}
+
+	function EditJam($kode)
+	{
+		$query = "Select Jam From jadwal Where Kode_Jadwal ='$kode';";
+		$hasil = $this->db->query($query);
+		return $hasil->result();
+	}
+
+	function EditRuangan($kode)
+	{
+		$query = "SELECT jadwal.Kode_Jadwal, dosen.Nama_Dosen, mata_kuliah.Nama_Mata_Kuliah, jadwal.Hari, jadwal.jam, ruangan.Nama_Ruangan, jadwal.Sks FROM jadwal AS jadwal INNER JOIN dosen AS dosen ON jadwal.Kode_Dosen = dosen.Kode_Dosen INNER JOIN ruangan AS ruangan ON jadwal.Kode_Ruangan = ruangan.Kode_Ruangan INNER JOIN mata_kuliah AS mata_kuliah ON jadwal.Kode_Mata_Kuliah = mata_kuliah.Kode_Mata_Kuliah Where Kode_Jadwal ='$kode';";
+		$hasil = $this->db->query($query);
+		return $hasil->result();
+	}
+
+	function EditSks($kode)
+	{
+		$query = "Select Sks From jadwal Where Kode_Jadwal ='$kode';";
+		$hasil = $this->db->query($query);
+		return $hasil->result();
+	}
 }

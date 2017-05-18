@@ -46,7 +46,8 @@
 			   Username:<br>
 			<input type="text" name="username" value=""><br><br>
                Password:<br>
-			<input type="password" name="password" value=""><br><br>	
+			<input type="password" name="password" value=""><br><br>
+			<p><?php echo $this->session->flashdata('failed'); ?></p>	
             <input type="submit" name="submit" value="LOGIN" id="submit">
 		    </td>
             </tr>
